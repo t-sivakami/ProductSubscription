@@ -1,4 +1,4 @@
- ======================
+ ======================
 Product Subscription App
 ======================
 Workflow:
@@ -6,20 +6,20 @@ Workflow:
 - There is a website where the home page is a landing page with a call to action "subscribe"
 
 Case1:
-- Upon clicking "Subscribe" user will be taken to  signUp
+- Upon clicking "Subscribe" user will be taken to  signUp
 - Once signedIn, the user will be redirected to payment page to fill card details.
-- Upon successfull payment, products page will be shown.
+- Upon successful payment, products page will be shown.
 - Adding products to card and payment will be worked upon.
 
 Case2: (to check workflow if payment is not done after signUp)
 - Once signedIn, the user will be redirected to payment page to fill card details.
 - Click on "products" link from header. 
 - User will be asked to "Subscribe"
-- Upon clicking "subscribe" buttong , user will be taken to payment page.
-- Upon successfull payment, products page will be shown.
+- Upon clicking "subscribe" button , user will be taken to payment page.
+- Upon successful payment, products page will be shown.
 
-Sase3:
-- Once loggedIn user can add products ( considering admins ). This has been implemented for testing pupose.
+Case3:
+- Once loggedIn user can add products ( considering admins ). This has been implemented for testing purpose.
 - Role based authentication will be implemented later.
 
 Notes
