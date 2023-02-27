@@ -1,0 +1,21 @@
+.proplans {
+  background-image: url(image_path('credits.png'));
+  max-width: 60%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 40px;
+}
+
+.lans {
+  max-width: 99%;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+
+.index {
+    background-image: url(image_path('gaming.png'));
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 300px;
+}

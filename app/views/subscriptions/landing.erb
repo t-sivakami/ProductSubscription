@@ -1,0 +1,30 @@
+
+<p align='center'> You have succesfully subscribed!. Keep watching for new updates.</p>
+
+<section class="jumbotron index">
+
+   <div class="container">
+
+   <h1 class="text-warning">Products</h1>
+    <p class="lead text-warning">Check out some of the latest Products</p>
+    <% if subscribed? %>
+    <a href="#" class="btn btn-primary my-2">Dear <%= current_user.name %>! you already have a Subscribtion </a>
+    <% else %>
+    <a href="#" class="btn btn-primary my-2"> Subscribe </a>
+    <% end %>
+   </div>
+
+</section>
+
+<section class="section">
+
+   <div class="album py-5 bg-light">
+    <div class="container">
+      <div class="row">
+      
+      </div>
+
+    </div>
+
+   </div>
+</section>

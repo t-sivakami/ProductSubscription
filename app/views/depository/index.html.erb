@@ -1,0 +1,68 @@
+<script>
+  Stripe.setPublishableKey("<%= ENV['stripe_publishable_key'] %>");
+</script>
+<script type="text/javascript">
+  $("#id_form_location").submit(function(event) {
+  alert('it works');
+});
+</script>
+
+<%= form_with url: "/subscriptions/create", method: :post do |p| %>
+<%#= form_for(@depositories, url: depositories_path(resource), method: :post ,html: {class: 'cc_form'} do |p| %>
+<%#= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |p| %>
+
+<div class="row col-md-12">
+
+<div class="form-group col-md-4 no-left-padding">
+
+<%= p.label :card_number, "Card Number", data: { stripe: 'label'} %>
+
+<%= p.text_field :card_number, class: "form-control", required: true, data: { stripe: 'number'} %>
+
+</div>
+
+<div class="form-group col-md-2">
+
+<%= p.label :card_cvc, "Card CVC", data: { stripe: 'label'} %>
+
+<%= p.text_field :card_cvv, class: "form-control", required: true, data: { stripe: 'cvv'} %>
+
+</div>
+
+<div class="form-group col-md-6">
+
+<div class="col-md-12">
+
+<%= p.label :card_expires, "Card Expires", data: { stripe: 'label'} %>
+
+</div>
+
+<div class="col-md-3">
+
+<%= p.select :card_expires_month, options_for_select(Payment.month_options),
+
+{ include_blank: 'Month' },
+
+"data-stripe" => "exp-month",
+
+class: "form-control", required: true %>
+
+</div>
+
+<div class="col-md-3">
+
+<%= p.select :card_expires_year, options_for_select(Payment.year_options.push),
+
+{ include_blank: 'Year' },
+
+class: "form-control",
+
+data: { stripe: "exp-year" }, required: true %>
+
+</div>
+
+</div>
+
+</div>
+
+<% end %>

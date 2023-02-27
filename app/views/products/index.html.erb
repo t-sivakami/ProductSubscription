@@ -1,0 +1,76 @@
+
+<section class="jumbotron index">
+
+   <div class="container">
+
+   <h1 class="text-warning">Products</h1>
+    <% if user_signed_in? && subscribed? %>
+    <a href="#" class="btn btn-primary my-2">Dear <%= current_user.name %>! you already have a Subscription </a><br>
+    <b> Keep watching for more updates!</b>
+
+    <% elsif user_signed_in? && !subscribed? %>
+    <p class="lead text-warning">Check out some of the latest Products</p>
+    <a href="/subscriptions/new" class="btn btn-primary my-2"> Subscribe </a>
+
+    <% else %>
+    <p class="lead text-warning">Check out some of the latest Products</p>
+    <a href="/subscriptions/new" class="btn btn-primary my-2"> Subscribe </a>
+    <% end %>
+   </div>
+
+</section>
+
+<section class="section">
+
+   <div class="album py-5 bg-light">
+    <div class="container">
+      <div class="row">
+        
+      <%= render @products %>
+
+      </div>
+
+    </div>
+
+   </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,67 @@
+<div class="col-md-4">
+          <div class="card mb-4 shadow-sm">
+            <div class="card-body">
+
+             
+              <%= image_tag(product.image_url, class: 'card-img-top img-fluid') %>
+                <h4 class="card-title"><%= product.title %></h4>
+                <h6 class="card-subtitle text-muted"><%= product.author %></h6>
+
+
+
+  <!-- SIMPLE CARD -->
+          
+
+                  <!-- if Subscribed -->
+                  
+
+                  <% if subscribed? %>
+
+         
+
+
+
+                     <div class="d-flex justify-content-between align-items-center">
+                   <div class="btn-group">
+                 
+                    <% if user_added_to_depository?(current_user, product) %>
+
+                <%= link_to 'Remove from Cart', add_product_path(product, type: "remove"), method: :put, class: "btn btn-danger" %>
+
+                 <% if controller.controller_name == "depository" %>
+                 <%= link_to 'Download', '#', class: "btn btn-success" %>
+                  <% end %>
+
+                  </div>
+
+                </div>
+               <!-- if Subscribed -->
+
+                <% else %>
+                  
+                 <!-- Not Subscribed -->
+                  
+                   <%= link_to 'Add to Cart', add_product_path(product, type: "add"), method: :put, class: "btn btn-primary" %>
+
+                  
+             
+               <% end %>
+
+                <% else %>
+
+               <div class="d-flex justify-content-between align-items-center">
+                   <div class="btn-group">
+               <%= link_to 'Add to Cart', new_user_registration_path, class: "btn btn-primary" %>
+               <% end %>
+               </div>
+
+               </div>
+              <!-- Not Subscribed -->
+        
+              </div>
+              </div>
+              </div>   
+
+
+
+              
